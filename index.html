@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encuesta de Satisfacción - Curso Antigravity</title>
+    <!-- Google Fonts: Outfit for titles and Inter for text -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="app.js" defer></script>
+</head>
+<body>
+    <div class="background-decorations">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+    </div>
+
+    <main class="survey-container">
+        <!-- Form Screen -->
+        <section id="survey-form-section" class="survey-card">
+            <header class="survey-header">
+                <div class="logo-container">
+                    <svg class="logo" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="12" cy="12" r="10" stroke="url(#logo-grad)" stroke-width="2.5"/>
+                        <path d="M12 7V17M12 7L8 11M12 7L16 11" stroke="url(#logo-grad)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <defs>
+                            <linearGradient id="logo-grad" x1="2" y1="2" x2="22" y2="22" gradientUnits="userSpaceOnUse">
+                                <stop offset="0%" stop-color="#00f2fe"/>
+                                <stop offset="100%" stop-color="#4facfe"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                    <span class="logo-text">ANTIGRAVITY</span>
+                </div>
+                <h1>Tu Opinión es Clave</h1>
+                <p class="subtitle">Ayúdanos a desafiar la gravedad del aprendizaje. Comparte tu experiencia en el curso.</p>
+            </header>
+
+            <form id="antigravity-survey" novalidate>
+                <!-- Student ID -->
+                <div class="input-group">
+                    <label for="id_estudiante" class="field-label">Identificador del Alumno</label>
+                    <div class="input-wrapper">
+                        <input type="text" id="id_estudiante" name="id_estudiante" placeholder="Ej: EST-89423" required autocomplete="off">
+                        <span class="focus-border"></span>
+                    </div>
+                    <span class="error-message" id="error-id-estudiante">Por favor, introduce tu identificador de estudiante.</span>
+                </div>
+
+                <!-- Satisfaction Rating -->
+                <div class="rating-group">
+                    <span class="field-label">¿Cuál es tu nivel de satisfacción general con el curso?</span>
+                    <div class="rating-options">
+                        <label class="rating-option">
+                            <input type="radio" name="nivel_satisfaccion" value="1" required>
+                            <span class="rating-number">1</span>
+                        </label>
+                        <label class="rating-option">
+                            <input type="radio" name="nivel_satisfaccion" value="2">
+                            <span class="rating-number">2</span>
+                        </label>
+                        <label class="rating-option">
+                            <input type="radio" name="nivel_satisfaccion" value="3">
+                            <span class="rating-number">3</span>
+                        </label>
+                        <label class="rating-option">
+                            <input type="radio" name="nivel_satisfaccion" value="4">
+                            <span class="rating-number">4</span>
+                        </label>
+                        <label class="rating-option">
+                            <input type="radio" name="nivel_satisfaccion" value="5">
+                            <span class="rating-number">5</span>
+                        </label>
+                    </div>
+                    <div class="rating-labels">
+                        <span>Muy insatisfecho</span>
+                        <span>Muy satisfecho</span>
+                    </div>
+                    <span class="error-message" id="error-satisfaccion">Selecciona un nivel de satisfacción.</span>
+                </div>
+
+                <!-- Content Clarity Rating -->
+                <div class="rating-group">
+                    <span class="field-label">¿Cómo calificarías la claridad del contenido?</span>
+                    <div class="rating-options">
+                        <label class="rating-option">
+                            <input type="radio" name="claridad_contenido" value="1" required>
+                            <span class="rating-number">1</span>
+                        </label>
+                        <label class="rating-option">
+                            <input type="radio" name="claridad_contenido" value="2">
+                            <span class="rating-number">2</span>
+                        </label>
+                        <label class="rating-option">
+                            <input type="radio" name="claridad_contenido" value="3">
+                            <span class="rating-number">3</span>
+                        </label>
+                        <label class="rating-option">
+                            <input type="radio" name="claridad_contenido" value="4">
+                            <span class="rating-number">4</span>
+                        </label>
+                        <label class="rating-option">
+                            <input type="radio" name="claridad_contenido" value="5">
+                            <span class="rating-number">5</span>
+                        </label>
+                    </div>
+                    <div class="rating-labels">
+                        <span>Muy poco claro</span>
+                        <span>Muy claro</span>
+                    </div>
+                    <span class="error-message" id="error-claridad">Selecciona un nivel de claridad.</span>
+                </div>
+
+                <!-- Practical Applicability Rating -->
+                <div class="rating-group">
+                    <span class="field-label">¿Qué tan aplicable a la práctica consideras lo aprendido?</span>
+                    <div class="rating-options">
+                        <label class="rating-option">
+                            <input type="radio" name="aplicabilidad_practica" value="1" required>
+                            <span class="rating-number">1</span>
+                        </label>
+                        <label class="rating-option">
+                            <input type="radio" name="aplicabilidad_practica" value="2">
+                            <span class="rating-number">2</span>
+                        </label>
+                        <label class="rating-option">
+                            <input type="radio" name="aplicabilidad_practica" value="3">
+                            <span class="rating-number">3</span>
+                        </label>
+                        <label class="rating-option">
+                            <input type="radio" name="aplicabilidad_practica" value="4">
+                            <span class="rating-number">4</span>
+                        </label>
+                        <label class="rating-option">
+                            <input type="radio" name="aplicabilidad_practica" value="5">
+                            <span class="rating-number">5</span>
+                        </label>
+                    </div>
+                    <div class="rating-labels">
+                        <span>Nada aplicable</span>
+                        <span>Muy aplicable</span>
+                    </div>
+                    <span class="error-message" id="error-aplicabilidad">Selecciona un nivel de aplicabilidad.</span>
+                </div>
+
+                <!-- Additional Comments -->
+                <div class="input-group">
+                    <label for="comentarios_adicionales" class="field-label">Comentarios adicionales</label>
+                    <div class="input-wrapper">
+                        <textarea id="comentarios_adicionales" name="comentarios_adicionales" placeholder="Comparte tus sugerencias, dudas o lo que más te gustó del curso..." rows="4"></textarea>
+                        <span class="focus-border"></span>
+                    </div>
+                </div>
+
+                <!-- Global Error Message -->
+                <div class="global-error hidden" id="global-error">
+                    <span class="error-text">No se pudo enviar la encuesta. Por favor, verifica tu conexión o vuelve a intentarlo.</span>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="submit-btn">
+                    <span>Enviar Encuesta</span>
+                    <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+            </form>
+        </section>
+
+        <!-- Success Screen -->
+        <section id="success-card-section" class="survey-card success-card hidden">
+            <div class="success-icon-wrapper">
+                <svg class="success-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="12" cy="12" r="10" fill="url(#success-grad)" />
+                    <path d="M8 12L11 15L16 9" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <defs>
+                        <linearGradient id="success-grad" x1="2" y1="2" x2="22" y2="22" gradientUnits="userSpaceOnUse">
+                            <stop offset="0%" stop-color="#00f2fe"/>
+                            <stop offset="100%" stop-color="#9b51e0"/>
+                        </linearGradient>
+                    </defs>
+                </svg>
+            </div>
+            <h2>¡Gracias por tus comentarios!</h2>
+            <p class="success-message">Tu opinión nos ayuda a seguir elevando el nivel del curso de Antigravity. Los datos han sido registrados con éxito.</p>
+            
+            <div class="summary-box">
+                <h3>Resumen de tus respuestas:</h3>
+                <ul class="summary-list">
+                    <li><strong>ID Estudiante:</strong> <span id="summary-id"></span></li>
+                    <li><strong>Satisfacción:</strong> <span id="summary-satisfaccion"></span>/5</li>
+                    <li><strong>Claridad de Contenido:</strong> <span id="summary-claridad"></span>/5</li>
+                    <li><strong>Aplicabilidad Práctica:</strong> <span id="summary-aplicabilidad"></span>/5</li>
+                </ul>
+            </div>
+
+            <button id="reset-btn" class="reset-btn">Enviar otra respuesta</button>
+        </section>
+    </main>
+</body>
+</html>
