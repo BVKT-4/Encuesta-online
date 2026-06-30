@@ -5,10 +5,10 @@
     --card-border: rgba(255, 255, 255, 0.08);
     --text-primary: #ffffff;
     --text-secondary: #b0aeb6;
-    --accent-cyan: #00f2fe;
-    --accent-purple: #9b51e0;
-    --accent-glow: rgba(0, 242, 254, 0.15);
-    --accent-purple-glow: rgba(155, 81, 224, 0.25);
+    --accent-pink: #ff2a85;
+    --accent-violet: #8e2de2;
+    --accent-pink-glow: rgba(255, 42, 133, 0.2);
+    --accent-violet-glow: rgba(142, 45, 226, 0.25);
     --error-red: #ff3366;
     --error-glow: rgba(255, 51, 102, 0.15);
     --success-green: #00e676;
@@ -60,7 +60,7 @@ body {
 .orb-1 {
     width: 400px;
     height: 400px;
-    background: radial-gradient(circle, var(--accent-cyan) 0%, transparent 70%);
+    background: radial-gradient(circle, var(--accent-pink) 0%, transparent 70%);
     top: -10%;
     left: -10%;
 }
@@ -68,7 +68,7 @@ body {
 .orb-2 {
     width: 500px;
     height: 500px;
-    background: radial-gradient(circle, var(--accent-purple) 0%, transparent 70%);
+    background: radial-gradient(circle, var(--accent-violet) 0%, transparent 70%);
     bottom: -15%;
     right: -10%;
     animation-delay: -5s;
@@ -77,7 +77,7 @@ body {
 .orb-3 {
     width: 300px;
     height: 300px;
-    background: radial-gradient(circle, #ff007f 0%, transparent 70%);
+    background: radial-gradient(circle, var(--accent-pink) 0%, transparent 70%);
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -137,7 +137,7 @@ body {
 .logo {
     width: 32px;
     height: 32px;
-    filter: drop-shadow(0 0 8px rgba(0, 242, 254, 0.5));
+    filter: drop-shadow(0 0 8px var(--accent-pink-glow));
 }
 
 .logo-text {
@@ -145,7 +145,7 @@ body {
     font-weight: 800;
     font-size: 1.1rem;
     letter-spacing: 0.2em;
-    background: linear-gradient(90deg, var(--accent-cyan), var(--accent-purple));
+    background: linear-gradient(90deg, var(--accent-pink), var(--accent-violet));
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -203,9 +203,9 @@ input[type="text"], textarea {
 
 input[type="text"]:focus, textarea:focus {
     outline: none;
-    border-color: var(--accent-cyan);
+    border-color: var(--accent-pink);
     background: rgba(255, 255, 255, 0.05);
-    box-shadow: 0 0 15px var(--accent-glow);
+    box-shadow: 0 0 15px var(--accent-pink-glow);
 }
 
 textarea {
@@ -252,19 +252,19 @@ textarea {
 
 .rating-option:hover .rating-number {
     color: var(--text-primary);
-    border-color: rgba(0, 242, 254, 0.4);
-    background: rgba(0, 242, 254, 0.03);
+    border-color: rgba(255, 42, 133, 0.4);
+    background: rgba(255, 42, 133, 0.03);
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(0, 242, 254, 0.1);
+    box-shadow: 0 5px 15px rgba(255, 42, 133, 0.1);
 }
 
 /* Checked State for custom scale */
 .rating-option input[type="radio"]:checked + .rating-number {
     color: var(--text-primary);
-    background: linear-gradient(135deg, var(--accent-cyan) 0%, var(--accent-purple) 100%);
+    background: linear-gradient(135deg, var(--accent-pink) 0%, var(--accent-violet) 100%);
     border-color: transparent;
     transform: translateY(-4px) scale(1.05);
-    box-shadow: 0 8px 20px var(--accent-purple-glow), 0 0 10px var(--accent-glow);
+    box-shadow: 0 8px 20px var(--accent-violet-glow), 0 0 10px var(--accent-pink-glow);
 }
 
 /* Rating Labels underneath */
@@ -279,7 +279,7 @@ textarea {
 /* Submit Button */
 .submit-btn {
     width: 100%;
-    background: linear-gradient(90deg, var(--accent-cyan) 0%, var(--accent-purple) 100%);
+    background: linear-gradient(90deg, var(--accent-pink) 0%, var(--accent-violet) 100%);
     border: none;
     border-radius: 14px;
     padding: 1.1rem;
@@ -293,13 +293,13 @@ textarea {
     gap: 0.55rem;
     cursor: pointer;
     transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-    box-shadow: 0 6px 20px var(--accent-purple-glow);
+    box-shadow: 0 6px 20px var(--accent-violet-glow);
     margin-top: 1.5rem;
 }
 
 .submit-btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 10px 25px var(--accent-purple-glow), 0 0 15px rgba(0, 242, 254, 0.3);
+    box-shadow: 0 10px 25px var(--accent-violet-glow), 0 0 15px rgba(255, 42, 133, 0.3);
 }
 
 .submit-btn:active {
@@ -364,7 +364,7 @@ textarea {
 .success-icon {
     width: 80px;
     height: 80px;
-    filter: drop-shadow(0 0 15px var(--accent-glow));
+    filter: drop-shadow(0 0 15px var(--accent-pink-glow));
     animation: pop-in 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
 }
 
@@ -379,7 +379,7 @@ textarea {
     font-size: 2rem;
     font-weight: 700;
     margin-bottom: 1rem;
-    background: linear-gradient(90deg, #ffffff, var(--accent-cyan));
+    background: linear-gradient(90deg, #ffffff, var(--accent-pink));
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -407,7 +407,7 @@ textarea {
     font-family: var(--font-display);
     font-size: 1rem;
     margin-bottom: 1rem;
-    color: var(--accent-cyan);
+    color: var(--accent-pink);
 }
 
 .summary-list {
